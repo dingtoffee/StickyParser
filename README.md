@@ -36,3 +36,7 @@ optional arguments:
                        C:\Users\User\Desktop\
  ```
 # Example Outputs 
+SNT Paser Output 
+![SNT Praser Output](https://github.com/dingtoffee/StickyParser/blob/master/legacy_snt_output.JPG)
+Plum Sqlite Paser Output 
+![Plum Sqlite Paser Output](https://github.com/dingtoffee/StickyParser/blob/master/plum_output.JPG)
