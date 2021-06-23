@@ -8,11 +8,14 @@ For latest version of StickyNote,
 * Run StickyPraser against the copied folder. Make sure the other files apart from the plum.sqlite are all in the same folder. Once run, WAL/SHMfiles will be merged into .sqlite file.
 * Execute StickyPasrser
 * Result csv will be created under the directory you specified. 
+* All timestamps are recorded in UTC.
 
 For legacy snt format of StickyNote, 
 * Copy StickyNotes.snt under ``` C:\Users\User\AppData\Roaming\StickyNotes\```
 * Run StickyPraser against the StickyNotes.snt
 * Result csv will be created under the directory you specified. 
+* All timestamps are recorded in UTC.
+
 # Usage 
 ```
 usage: StickyParser.exe [-h] [-s [snt file]] [-p [sqlite file]] [-d [File Directory]]
@@ -32,3 +35,4 @@ optional arguments:
   -d [File Directory]  Specify the directory where the output should write to. Example: StickyParser -p <path> -d
                        C:\Users\User\Desktop\
  ```
+# Example Outputs 
