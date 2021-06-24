@@ -48,7 +48,7 @@ python stickyparser.py -s "C:\Users\User\AppData\Roaming\StickyNotes\StickyNotes
 ```
 python stickyparser.py -p %LOCALAPPDATA%\Packages\Microsoft.MicrosoftStickyNotes_8wekyb3d8bbw\LocalStatealState\plum.sqlite -d C:\temp
 ```
-* Recovery of deleted content from plum.sqlite (it may also support generic sqlite3 file) 
+* Recovery of deleted content inside plum.sqlite (it may also support generic sqlite3 file) 
 ```
 python stickyparser.py -r  %LOCALAPPDATA%\Packages\Microsoft.MicrosoftStickyNotes_8wekyb3d8bbw\LocalStatealState\plum.sqlite -d C:\temp
 ```
