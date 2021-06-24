@@ -59,3 +59,7 @@ SNT Paser Output
 ![SNT Praser Output](https://github.com/dingtoffee/StickyParser/blob/master/legacy_snt_output.JPG)
 Plum Sqlite Paser Output 
 ![Plum Sqlite Paser Output](https://github.com/dingtoffee/StickyParser/blob/master/plum_output.JPG)
+
+# References 
+https://github.com/aramosf/recoversqlite
+https://gist.github.com/daddycocoaman/e1a4f31109e17188d5ce8fd0ca15b63e
