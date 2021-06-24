@@ -18,6 +18,8 @@ For legacy snt format of StickyNote,
 Additional Features: 
 * Support recovery of deleted content of plum.sqlite. 
 * Result will be created under the directory you specified. 
+
+Support Python Version 3.x only. 
 # Usage 
 ```
 usage: stickyparser.py [-h] [-s [snt file]] [-p [sqlite file]] [-d [File Directory]] [-r [sqlite file]]
