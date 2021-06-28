@@ -48,11 +48,11 @@ python stickyparser.py -s "C:\Users\User\AppData\Roaming\StickyNotes\StickyNotes
 ```
 * Parse plum.sqlite file 
 ```
-python stickyparser.py -p %LOCALAPPDATA%\Packages\Microsoft.MicrosoftStickyNotes_8wekyb3d8bbw\LocalStatealState\plum.sqlite -d C:\temp
+python stickyparser.py -p %LOCALAPPDATA%\Packages\Microsoft.MicrosoftStickyNotes_8wekyb3d8bbwe\LocalState\plum.sqlite -d C:\temp
 ```
 * Recovery of deleted content inside plum.sqlite (it may also support generic sqlite3 file) 
 ```
-python stickyparser.py -r  %LOCALAPPDATA%\Packages\Microsoft.MicrosoftStickyNotes_8wekyb3d8bbw\LocalStatealState\plum.sqlite -d C:\temp
+python stickyparser.py -r %LOCALAPPDATA%\Packages\Microsoft.MicrosoftStickyNotes_8wekyb3d8bbwe\LocalState\plum.sqlite -d C:\temp
 ```
 # Example Outputs 
 SNT Paser Output 
