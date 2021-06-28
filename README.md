@@ -3,7 +3,7 @@
 
 
 For latest version of StickyNote, 
-* Copy  everything under the ```%LOCALAPPDATA%\Packages\Microsoft.MicrosoftStickyNotes_8wekyb3d8bbw\LocalStatealStateFolder```. 
+* Copy  everything under the ```%LOCALAPPDATA%\Packages\Microsoft.MicrosoftStickyNotes_8wekyb3d8bbwe\LocalState```. 
 * Run StickyPraser against the copied folder. Make sure the other files apart from the plum.sqlite are all in the same folder. Once run, WAL/SHMfiles will be merged into .sqlite file.
 * Execute StickyPasrser
 * Result csv will be created under the directory you specified. 
