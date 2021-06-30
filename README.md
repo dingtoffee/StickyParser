@@ -1,5 +1,6 @@
 # StickyParser 
 ### A Windows Sticky Notes Parser (snt and plum.sqlite supported)  - Recovery of sqlite/plum sqlite also supported.
+For details on how Sticky Notes work, you could also refer to my write up here : https://dingtoffee.medium.com/windows-sticky-notes-forensics-80ee31ab67ef
 
 Sticky Notes is a feature starting from Windows 7 that allows a user to create sticky notes on their desktop/laptop. 
 ### Legacy Sticky Note Format 
