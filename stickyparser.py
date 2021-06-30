@@ -49,7 +49,10 @@ def plum(db):
     db_df = pd.read_sql_query("SELECT * FROM Note", conn)
    
     if db_df['LastServerVersion'][0] is None:
-        db_df = pd.read_sql_query("SELECT * FROM Note", conn)
+        db_df = pd.read_sql_query("SELECT Text, WindowPosition, IsOpen, IsAlwaysOnTop, CreationNoteIdAnchor, Theme, IsFutureNote, \
+        RemoteId, ChangeKey, LastServerVersion, RemoteSchemaVersion, IsRemoteDataInvalid, PendingInsightsScan, Type, Id, ParentId, \
+        strftime('%Y-%m-%d %H:%M-%S', CreatedAt/10000000 - 62135596800,'unixepoch') AS CreatedAtUTC, strftime('%Y-%m-%d %H:%M-%S', DeletedAt/10000000 - 62135596800,'unixepoch') AS DeletedAtUTC,\
+        strftime('%Y-%m-%d %H:%M-%S', UpdatedAt/10000000 - 62135596800,'unixepoch') AS UpdatedAtUTC FROM Note", conn)
         now = datetime.datetime.now().strftime("%Y%m%d%H%M")
         print("StickyParser: Saving the csv file")
        
