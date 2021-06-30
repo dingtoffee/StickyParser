@@ -46,38 +46,17 @@ def plum(db):
    
     conn = sqlite3.connect(db, isolation_level=None,
                        detect_types=sqlite3.PARSE_COLNAMES)
-    db_df = pd.read_sql_query("SELECT * FROM Note", conn)
-   
-    if db_df['LastServerVersion'][0] is None:
-        db_df = pd.read_sql_query("SELECT Text, WindowPosition, IsOpen, IsAlwaysOnTop, CreationNoteIdAnchor, Theme, IsFutureNote, \
+    db_df = pd.read_sql_query("SELECT Text, WindowPosition, IsOpen, IsAlwaysOnTop, CreationNoteIdAnchor, Theme, IsFutureNote, \
         RemoteId, ChangeKey, LastServerVersion, RemoteSchemaVersion, IsRemoteDataInvalid, PendingInsightsScan, Type, Id, ParentId, \
         strftime('%Y-%m-%d %H:%M-%S', CreatedAt/10000000 - 62135596800,'unixepoch') AS CreatedAtUTC, strftime('%Y-%m-%d %H:%M-%S', DeletedAt/10000000 - 62135596800,'unixepoch') AS DeletedAtUTC,\
         strftime('%Y-%m-%d %H:%M-%S', UpdatedAt/10000000 - 62135596800,'unixepoch') AS UpdatedAtUTC FROM Note", conn)
-        now = datetime.datetime.now().strftime("%Y%m%d%H%M")
-        print("StickyParser: Saving the csv file")
+    now = datetime.datetime.now().strftime("%Y%m%d%H%M")
+    print("StickyParser: Saving the csv file")
        
-        db_df.to_csv(args.d+ 'stickynoteresultplum-'+ now + '.csv', index=False)    
-        print("StickyParser: File saved.")
-       
-    if db_df['LastServerVersion'][0] is not None:
-        a = db_df.LastServerVersion.apply(json.loads).values.tolist()
-        temp_df = pd.DataFrame.from_records(a)
-        text_df = []
-        for  no in temp_df["document"]:
-            text = ""
-            for block in no["blocks"]:
+    db_df.to_csv(args.d+ 'stickynoteresultplum-'+ now + '.csv', index=False)    
+    print("StickyParser: File saved.")
 
-                for content in block["content"]:
-                    text = text + content["text"] + "\r"
-
-            text_df.append(text)
-        temp_df.insert(3,"text",text_df,True)
-        now = datetime.datetime.now().strftime("%Y%m%d%H%M")
-        print("StickyParser: Saving the csv file")
-        temp_df.to_csv(args.d+ 'stickynoteresultplum-'+ now + '.csv', index=False)    
-        print("StickyParser: File saved.")
-   
-   
+  
 
 def all_same(items):
     return all(x == items[0] for x in items)
