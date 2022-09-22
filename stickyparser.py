@@ -257,8 +257,7 @@ if __name__ == "__main__":
         print('StickyParser: Output set to the current directory...')
         args.d = os.path.abspath(os.getcwd())
         if args.d[-1] != '\\':
-            args.d = args.d +　'\\'
-
+            args.d = args.d + '\\'
     if args.s is not None:
 
         print('StickyPraser: Parsing the SNT File...')
@@ -492,6 +491,5 @@ if __name__ == "__main__":
     if len(sys.argv) < 2:
         parser.print_usage()
         sys.exit(1)
-
 
 
