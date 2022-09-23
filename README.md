@@ -37,7 +37,7 @@ Additional Features:
 
 Support Python Version 3.x only. 
 
-### Prerequisite
+# Prerequisite
 Please install the relevant Python modules before running: 
 ```pip install pandas olefile```
 
