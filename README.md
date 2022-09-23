@@ -36,6 +36,11 @@ Additional Features:
 * Result will be created under the directory you specified. 
 
 Support Python Version 3.x only. 
+
+### Prerequisite
+Please install the relevant Python modules before running: 
+```pip install pandas olefile```
+
 # Usage 
 ```
 usage: stickyparser.py [-h] [-s [snt file]] [-p [sqlite file]] [-d [File Directory]] [-r [sqlite file]]
