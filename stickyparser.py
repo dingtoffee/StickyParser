@@ -13,29 +13,32 @@ def snt(file):
         return "Invalid OLE file"
 
     ole = olefile.OleFileIO(file)
-    note = {}
+    df_id = []
+    df_created = []
+    df_modified = []
+    df_text = [] 
     now = datetime.datetime.now().strftime("%Y%m%d%H%M")
+  
+   
     for stream in ole.listdir():
         if stream[0].count("-") == 3:
-            if stream[0] not in note:
-                    note[stream[0]] = {"created": str(ole.getctime(stream[0])), "modified": str(ole.getmtime(stream[0]))}
-                    content = None
-            if stream[1] == '3':
-                    content = ole.openstream(stream).read().decode("utf-16").rstrip("\u0000")
-            if content:
-                    note[stream[0]][stream[1]] = content
-
-    db_df =  pd.read_json(json.dumps(note, indent=4, sort_keys=True))
-    data_df= []
-    column_df = []
-
-    column_df = list(db_df.index.values)
-    column_df[0] = 'text'
-    column_df.insert(0,'id')
-    temp_list = db_df.columns
-    for i in range(len(list(db_df.columns.values))):
-           data_df.append([temp_list[i],db_df.iloc[0,i],db_df.iloc[1,i],db_df.iloc[2,i]])
-    final_df = pd.DataFrame(data = data_df , columns = column_df)
+            if stream[0] not in df_id:
+                    df_id.append (stream[0])
+                    df_created.append (str(ole.getctime(stream[0])))
+                    df_modified.append (str(ole.getmtime(stream[0])))
+                    
+            #if stream[1] == '3':
+            # Stream 3 truncates the text after reaching certain length. The snt function was rewritten to use Stream 0 instead. 
+            if stream[1] == '0':
+                   
+                    x = ole.openstream(stream).read().decode("utf-8")
+                    x = x.split('fs22 ')
+                    x = x[1].split('\lang9')[0]
+                    content = x.replace('\par', ' ')
+                    df_text.append(content)
+      
+    data_dict = {'id': df_id, 'text': df_text, 'created': df_created, 'modified' : df_modified }
+    final_df = pd.DataFrame(data_dict)
     print("StickyParser: Saving the csv file")
    
     final_df.to_csv(args.d+ 'stickynoteresultsnt-'+ now + '.csv', index=False)
